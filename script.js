@@ -8,6 +8,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile menu toggle functionality
+const hamburgIcon = document.querySelector('.hamburg-icon');
+const navLinks = document.querySelector('.nav-links');
+
+hamburgIcon.addEventListener('click', () => {
+    hamburgIcon.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburgIcon.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Close mobile menu when clicking outside
+window.addEventListener('click', (e) => {
+    if (!hamburgIcon.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburgIcon.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+});
+
 // Animate service cards on scroll
 const observerOptions = {
     threshold: 0.5
@@ -24,12 +49,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.service-card').forEach(card => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
+    card.style.transform = 'translateY(50px)';
     card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(card);
 });
 
-// Anime.js animated shapes
+
 
 
 
@@ -53,7 +78,13 @@ document.querySelectorAll('.service-card').forEach(card => {
     nodes.forEach(item => {
       if (item.type === 'char') {
         const span = document.createElement('span');
-        span.textContent = item.value;
+        if (item.value === ' ') {
+          // Preserve spaces by using non-breaking space or adding a class
+          span.innerHTML = '&nbsp;';
+          span.className = 'space-char';
+        } else {
+          span.textContent = item.value;
+        }
         span.style.animationDelay = `${charIndex * 0.05}s`;
         el.appendChild(span);
         charIndex++;
