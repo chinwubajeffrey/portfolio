@@ -253,7 +253,7 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
 
         .section-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 2rem;
             margin-bottom: 4rem;
         }
@@ -266,7 +266,7 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
         }
 
         .section-title {
-            text-align: end;
+            text-align: left;
             font-size: 3rem;
             font-weight: 700;
             width: 10;
@@ -281,7 +281,7 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
         }
 
         .service-item {
-            padding: 1.5rem;
+            padding: 1.5rem 0px;
             border-top: 1px solid #333;
         }
 
@@ -565,11 +565,11 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
         font-size: 2rem;
     }
     .services{
-        display: none;
+
         padding: 0rem 2rem;
     }
     .section-header{
-        display: none   ;
+        /* display: none   ; */
         margin-bottom: 0;
     }
 }
@@ -579,7 +579,7 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
 
 /* SkillsTools Section */
 .skills {
-    padding: 6rem 4rem;
+    padding: 6rem 100px;
     background: #0b0d12; /* near-black to match site vibe */
     color: #ffffff;
 }
@@ -789,7 +789,7 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
 }
 .section-title{
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 0;
 }
 
@@ -812,8 +812,87 @@ h1 span { display: inline-block; opacity: 0; transform: translateY(20px); animat
   }
 }
 
+.contact{
+    margin: 2rem 100px;
+}
+.contact h1{
+    color: #cbcbdc;
+    margin-bottom: 2rem;
+    
+}
+
+.form{
+    height: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    justify-content: space-around;
+    width: 70%;
+}
+
+input{
+    background: #0b0d12;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+.duo{
+    display: flex;
+    width: 100%;
+    gap: 4rem;
+}
+
+label{
+    width: 100%;
+}
+
+textarea{
+    background: #0b0d12;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+.submit-btn{
+    width: 7rem;
+    background-color: transparent;
+    border: 1px solid white;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 0;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover{
+            background: #FFFFFF;
+            color: #0b0d12;
+}
+
+@media (max-width: 786px) {
+    form{
+        width: 100%;
+    }
+    .contact{
+        margin: 2rem 2rem;
+        padding-left: 0px;
+    }
+}
 footer{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #ffffff;
@@ -821,4 +900,24 @@ footer{
     border-top: 1px solid #333;
 }
 
-  
+.socials{
+    display: flex;
+    margin-left: 6rem;
+    /* flex-basis: 30%; */
+    justify-content: space-around;
+}
+.socials a{
+    padding-right: 1rem;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+}
+
+.foot-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
